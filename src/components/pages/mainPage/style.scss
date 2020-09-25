@@ -1,0 +1,48 @@
+.main-page {
+  display: flex;
+  height: 82vh;
+  justify-content: flex-end;
+}
+
+
+.container-text {
+
+  margin-top: 215px;
+  padding-right: 15px;;
+
+  .head-text {
+    color: #fdd000;
+    text-align: right;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 44px;
+    font-weight: bold;
+    letter-spacing: 3.5px;
+  }
+
+  .text {
+    color: #DFDFDF;
+    text-align: right;
+    font-weight: lighter;
+    font-size: 30px;
+
+  }
+
+}
+
+.container-calendar {
+  padding-top: 215px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #272829;
+
+  .calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 467px;
+    height: 491px;
+    background: white;
+  }
+}

@@ -1,0 +1,42 @@
+img {
+    height: 50px;
+}
+
+.header {
+    padding: 50px 110px!important;
+    background: white;
+    height: 18vh;
+
+    @media screen and (max-width: 768px) {
+        padding: 0!important;
+        height: auto;
+    }
+}
+
+.navlink-custom {
+    position: relative;
+    font-family: 'Rubik', Medium, serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: #3d3d3d;
+}
+
+.nav-link {
+    color: #3d3d3d!important;
+    margin-left: 70px;
+}
+
+
+.active {
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 10px;
+        width: 10px;
+        background-color: #fdd000;
+        border-radius: 50%;
+    }
+}
