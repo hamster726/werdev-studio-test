@@ -1,16 +1,14 @@
 const initialState = {
-    menu: [],
-    items: [],
-    loading: true,
-    error: false,
-    summaryPrice: 0,
-    orderAccepted: false
+    popupSavedDate: null,
+    popupOpened: false,
+
 
 }
 
 
 const reducer = (state = initialState, action) => {
-
+    switch (action) {
+    }
 }
 
 export default reducer;

@@ -41,8 +41,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 467px;
-    height: 491px;
-    background: white;
+    flex-direction: column;
+    max-width: 467px;
+    height: 467px;
+    //border: 1px solid white;
+    color: #DFDFDF;
+
+    @media screen and (max-width: 768px) {
+      transform: scale(0.8)
+    }
   }
 }
