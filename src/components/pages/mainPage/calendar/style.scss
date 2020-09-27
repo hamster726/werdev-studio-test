@@ -1,4 +1,5 @@
 .calendar-cell {
+  position: relative;
   display: flex;
   width: 52px;
   height: 52px;
@@ -76,6 +77,21 @@ td {
   display: flex;
   align-items: center;
   font-size: 19px;
+}
+
+.chosen-date {
+color: #FDD000;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    height: 5px;
+    width: 5px;
+    background-color: #fdd000;
+    border-radius: 50%;
+  }
 }
 
 
