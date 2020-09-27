@@ -54,7 +54,9 @@ class MainPage extends Component {
 
     showPopup() {
         return (
-            <div className='popup'>
+            <div className='popup' onClick={() => {
+                this.props.showPopup(false)
+            }}>
                 <div className='popup-container'>
                     <div className='popup-form'>
                         <label className='popup-label'>Month</label>
