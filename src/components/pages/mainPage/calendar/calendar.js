@@ -131,6 +131,7 @@ class Calendar extends Component {
     createNextMonth = (currentDate) => {
         const nexDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1);
         const monthStarts = this.getDay(nexDate);
+        nexDate.setDate(currentDate.getDate());
 
 
         let arr = [];
@@ -185,7 +186,7 @@ class Calendar extends Component {
                     <div className='calendar-prev-month' onClick={() => {
                         this.updateMonth(-1)
                     }}>
-                        <img className='calendar-prev-month' src={ArrowLeftImg}/>
+                        <img className='prev-month-img' src={ArrowLeftImg}/>
                     </div>
                     <div className='calendar-current-month'>
                         {header}
@@ -193,7 +194,7 @@ class Calendar extends Component {
                     <div className='calendar-next-month' onClick={() => {
                         this.updateMonth(+1)
                     }}>
-                        <img className='calendar-prev-month' src={ArrowRightImg}/>
+                        <img className='next-month-img' src={ArrowRightImg}/>
                     </div>
                 </div>
                 <table>
@@ -205,15 +206,20 @@ class Calendar extends Component {
                     {getRow()}
                     </tbody>
                 </table>
-                <div className='calendar-footer'>
-                    <div className='calendar-day'>M</div>
-                    <div className='calendar-day'>T</div>
-                    <div className='calendar-day'>W</div>
-                    <div className='calendar-day'>T</div>
-                    <div className='calendar-day'>F</div>
-                    <div className='calendar-day'>S</div>
-                    <div className='calendar-day'>S</div>
-                </div>
+                <table className='calendar-footer'>
+                    <tbody className='calendar-footer'>
+                    <tr>
+                        <td className='calendar-day'>M</td>
+                        <td className='calendar-day'>T</td>
+                        <td className='calendar-day'>W</td>
+                        <td className='calendar-day'>T</td>
+                        <td className='calendar-day'>F</td>
+                        <td className='calendar-day'>S</td>
+                        <td className='calendar-day'>S</td>
+
+                    </tr>
+                    </tbody>
+                </table>
             </>
         )
     }

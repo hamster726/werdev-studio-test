@@ -27,7 +27,7 @@
 
 .active-cell {
   background: #FDD000;
-  color: #3d3d3d;
+  color: #3d3d3d!important;
 }
 
 table {
@@ -68,10 +68,31 @@ td {
 
 .calendar-prev-month, .calendar-next-month {
   display: flex;
-  width: 10px;
+  width: 35px;
   height: 100%;
   cursor: pointer;
+
+
+  .prev-month-img {
+    display: flex;
+    width: 10px;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .next-month-img {
+    display: flex;
+    width: 10px;
+    height: 100%;
+    cursor: pointer;
+  }
 }
+
+.calendar-next-month {
+  justify-content: flex-end;
+}
+
+
 
 .calendar-current-month {
   display: flex;
@@ -81,6 +102,7 @@ td {
 
 .chosen-date {
 color: #FDD000;
+
   &:after {
     content: "";
     position: absolute;
