@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import WeRDevsLogo from './werdevs-logo.png';
+import WeRDevsLogo from './werdevs-logo.svg';
 import './style.scss';
 import {Link} from "react-router-dom";
 import {connect} from 'react-redux';

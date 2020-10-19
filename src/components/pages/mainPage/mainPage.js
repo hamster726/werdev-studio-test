@@ -41,21 +41,25 @@ class MainPage extends Component {
     ]
 
 
-    getMonth () {
+    getMonth() {
         return this.nameOfMonth[this.props.shownDataInPopup[0]]
     }
-    getDay (){
+
+    getDay() {
         return this.props.shownDataInPopup[1]
     }
-    getDate(){
+
+    getDate() {
         return this.nameOfDay[this.props.shownDataInPopup[2]]
 
     }
 
     showPopup() {
         return (
-            <div className='popup' onClick={() => {
-                this.props.showPopup(false)
+            <div className='popup' onClick={(event) => {
+                if (event.target === event.currentTarget) {
+                    this.props.showPopup(false)
+                }
             }}>
                 <div className='popup-container'>
                     <div className='popup-form'>
@@ -65,14 +69,18 @@ class MainPage extends Component {
                     </div>
                     <div className='popup-form'>
                         <label className='popup-label'>Day</label>
-                        <input className="form-control popup-form-input" type="text" placeholder={`${this.getDay()}th ${this.getDate()}`}
+                        <input className="form-control popup-form-input" type="text"
+                               placeholder={`${this.getDay()}th ${this.getDate()}`}
                                readOnly/>
                     </div>
-                    <div className='popup-close-button'><img className='popup-close-button' src={TimesImg}
-                                                             onClick={() => {
-                                                                 this.props.showPopup(false)
-                                                             }}
-                    /></div>
+                    <div className='popup-close-button'>
+                        <img className='popup-close-button'
+                             onClick={(event) => {
+                                 if (event.target === event.currentTarget) {
+                                     this.props.showPopup(false)
+                                 }
+                             }}
+                             src={TimesImg}/></div>
                 </div>
             </div>
         )
@@ -86,9 +94,7 @@ class MainPage extends Component {
 
     render() {
         return (
-            <div className='container-fluid' onKeyDown={(event) => {
-                this.keyPressed(event)
-            }} tabIndex='0'>
+            <div className='container-fluid'>
                 <div className='row main-page'>
                     <div className='col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4'>
                         <div className='container-text'>

@@ -5,7 +5,7 @@ img {
 .header {
     padding: 50px 110px!important;
     background: white;
-    height: 18vh;
+    min-height: 18vh;
 
     @media screen and (max-width: 768px) {
         padding: 0!important;

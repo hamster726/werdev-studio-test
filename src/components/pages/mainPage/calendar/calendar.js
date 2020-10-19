@@ -41,7 +41,7 @@ class Calendar extends Component {
 
     getDay = (date) => {
         let day = new Date(date.getFullYear(), date.getMonth()).getDay();
-        // if (day === 7) day = 0;
+        if (day === 7) day = 0;
         return day - 1;
     }
 
@@ -98,14 +98,19 @@ class Calendar extends Component {
     createPrevMonth = (currentDate) => {
         const prevDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1);
         const daysInMonth = 32 - new Date(prevDate.getFullYear(), prevDate.getMonth(), 32).getDate();
-        const monthStarts = currentDate.getDay() + 2;
+        const monthStarts = this.getDay(new Date(currentDate.getFullYear(), currentDate.getMonth()));
 
         let arr = [];
         for (let i = 0; i < (monthStarts); i++) {
 
             arr.push(daysInMonth - i);
         }
+
         arr = arr.reverse();
+
+        if (arr.length > 7) {
+            arr = arr.slice(7)
+        }
 
         return this.renderDays(arr, prevDate);
 
@@ -188,7 +193,7 @@ class Calendar extends Component {
                     <div className='calendar-next-month' onClick={() => {
                         this.updateMonth(+1)
                     }}>
-                        <img className='calendar-next-month' src={ArrowRightImg}/>
+                        <img className='calendar-prev-month' src={ArrowRightImg}/>
                     </div>
                 </div>
                 <table>
@@ -201,12 +206,12 @@ class Calendar extends Component {
                     </tbody>
                 </table>
                 <div className='calendar-footer'>
-                    <div className='calendar-day'>S</div>
                     <div className='calendar-day'>M</div>
                     <div className='calendar-day'>T</div>
                     <div className='calendar-day'>W</div>
                     <div className='calendar-day'>T</div>
                     <div className='calendar-day'>F</div>
+                    <div className='calendar-day'>S</div>
                     <div className='calendar-day'>S</div>
                 </div>
             </>

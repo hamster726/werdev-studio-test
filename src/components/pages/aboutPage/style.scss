@@ -3,10 +3,9 @@
   justify-content: center;
 
   background: white;
-  height: 82vh;
+  min-height: 82vh;
 
   @media screen and (max-width: 768px){
-    height: auto;
     padding: 0 10px;
 
   }
